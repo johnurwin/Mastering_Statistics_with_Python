@@ -135,3 +135,11 @@ plt.savefig('histograms_with_lines.png')
 
 # Show the plot
 plt.show()
+
+
+# Create boxplots for all columns
+distributions_df.boxplot(figsize=(15, 10), vert=False)
+plt.title('Boxplots for All Columns')
+plt.xlabel('Value')
+plt.savefig('Boxplots_of_distributions.png')
+plt.show()
