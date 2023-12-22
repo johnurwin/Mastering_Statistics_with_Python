@@ -104,11 +104,11 @@ print(column_std_devs)
 
 # Create histograms with mean, one std above, and one std below lines
 fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15, 10))
-fig.suptitle('Histograms with Mean and One Standard Deviation Lines')
+fig.suptitle('Histograms with Mean and Standard Deviation Lines')
 
 for i, (col, ax) in enumerate(zip(distributions_df.columns, axes.flatten())):
     # Plot histogram
-    ax.hist(distributions_df[col], bins=20, density=True, alpha=0.7, color='blue')
+    ax.hist(distributions_df[col], bins=20, density=True, alpha=0.7, color='blue', edgecolor = 'black')
 
     # Plot mean line
     mean_value = distributions_df[col].mean()
