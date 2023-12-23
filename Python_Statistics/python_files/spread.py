@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
+import os
 
 # Set a seed for reproducibility
 np.random.seed(42)
@@ -130,16 +131,27 @@ for i, (col, ax) in enumerate(zip(distributions_df.columns, axes.flatten())):
 # Adjust layout
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 
+# Get the absolute path of the current script's directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Navigate to the parent directory and then enter Python_Generated_Images
+output_directory = os.path.join(current_directory, '..', 'Python_Generated_Images')
+
+output_filename = 'histograms_with_lines.png'
+output_path = os.path.join(output_directory, output_filename)
 # Save the plot as an image
-plt.savefig('histograms_with_lines.png')
+plt.savefig(output_path)
 
 # Show the plot
 plt.show()
 
 
+output_filename = 'Boxplots_of_distributions.png'
+output_path = os.path.join(output_directory, output_filename)
+
 # Create boxplots for all columns
 distributions_df.boxplot(figsize=(15, 10), vert=False)
 plt.title('Boxplots for All Columns')
 plt.xlabel('Value')
-plt.savefig('Boxplots_of_distributions.png')
+plt.savefig(output_path)
 plt.show()
