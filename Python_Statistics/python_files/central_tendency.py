@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import amazing_functions as af
 
 # Set a seed for reproducibility
 np.random.seed(42)
@@ -140,15 +141,8 @@ for i, (col, ax) in enumerate(zip(df.columns, axes.flatten())):
 # Adjust layout
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 
-# Save the plot to a file in a different directory
-# Get the absolute path of the current script's directory
-current_directory = os.path.dirname(os.path.abspath(__file__))
-
-# Navigate to the parent directory and then enter Python_Generated_Images
-output_directory = os.path.join(current_directory, '..', 'Python_Generated_Images')
-output_filename = 'all_histograms_with_mean_medians.png'
-output_path = os.path.join(output_directory, output_filename)
-plt.savefig(output_path)
+# Save the plot to a file in a different directory using amazing_functions
+af.back_one_enter_new('Python_Generated_Images', 'all_histograms_with_mean_medians.png')
 
 # Show the plot
 plt.show()
