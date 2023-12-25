@@ -10,7 +10,7 @@ import os
 import amazing_functions as af
 
 # Set a seed for reproducibility
-np.random.seed(42)
+np.random.seed(3800)
 
 # Number of samples for each distribution
 num_samples = 1000
@@ -46,9 +46,9 @@ data = {
     'Beta': beta_samples,
     'Cauchy': cauchy_samples,
     'ChiSquare': chi_square_samples,
-    'HighMeanLowMedian': np.concatenate([np.random.normal(loc=15, scale=1, size=num_samples//2),
+    'LowMeanHighMedian': np.concatenate([np.random.normal(loc=15, scale=1, size=num_samples//2),
                                          np.random.normal(loc=5, scale=5, size=num_samples//2)]),  # Distribution with a high mean and low median
-    'LowMeanHighMedian': np.concatenate([np.random.normal(loc=-5, scale=1, size=num_samples//2),
+    'HighMeanLowMedian': np.concatenate([np.random.normal(loc=-5, scale=1, size=num_samples//2),
                                          np.random.normal(loc=5, scale=5, size=num_samples//2)]),  # Distribution with a low mean and high median
 }
 
