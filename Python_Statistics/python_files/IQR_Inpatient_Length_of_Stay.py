@@ -10,6 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import gamma
 import os
+import amazing_functions as af
+
 
 # Set seed for reproducibility
 np.random.seed(333)
