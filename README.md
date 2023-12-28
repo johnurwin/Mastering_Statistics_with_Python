@@ -1,13 +1,6 @@
-
-
 <div align="center">
   <img src="https://github.com/johnurwin/Mastering_Statistics_with_Python/blob/main/Python_Statistics/logo.png" alt="Logo">
-
 </div>
-
-![Alt Text](https://github.com/johnurwin/Mastering_Statistics_with_Python/blob/main/Python_Statistics/logo.png)
-
-
 # Mastering Statistics with Python
 
 Welcome to the Mastering Statistics in Python repository! This repository serves as a collection of Python scripts and notebooks covering a range of statistical topics. 
