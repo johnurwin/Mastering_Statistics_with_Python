@@ -1,3 +1,10 @@
+
+
+
+![Alt Text](image_url)
+
+
+
 # Mastering Statistics with Python
 
 Welcome to the Mastering Statistics in Python repository! This repository serves as a collection of Python scripts and notebooks covering a range of statistical topics. 
