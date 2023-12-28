@@ -1,4 +1,4 @@
-# Mastering Statistics with Python
+<h1 align="center">Mastering Statistics with Python</h1>
 
 <div align="center">
   <img src="https://github.com/johnurwin/Mastering_Statistics_with_Python/blob/main/Python_Statistics/logo.png" alt="Logo">
