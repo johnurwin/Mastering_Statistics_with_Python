@@ -1,8 +1,8 @@
 
 
-
+<div align="center">
 ![Alt Text](https://github.com/johnurwin/Mastering_Statistics_with_Python/blob/main/Python_Statistics/logo.png)
-
+</div>
 
 
 # Mastering Statistics with Python
