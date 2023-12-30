@@ -27,6 +27,7 @@
 
 import numpy as np
 import pandas as pd
+import amazing_functions as af
 
 # Set a random seed for reproducibility
 np.random.seed(42)
@@ -164,16 +165,48 @@ print("\nContingency Table:")
 print(contingency_table)
 
 # Perform chi-squared test
-chi2, p, _, _ = chi2_contingency(contingency_table)
+chi2, p, dof, expected = chi2_contingency(contingency_table)
 
 # Display the test statistics and p-value
 print("\nChi-squared test statistics:", chi2)
 print("P-value:", p)
+print("dof:", dof)
+print("expected:", expected)
 
 # The A/B test uses a chi-squared test to compare the click-through rates for the two animal buttons.
 # Determine statistical significance
 alpha = 0.05
 if p < alpha:
-    print("\nThere is a statistically significant difference between the animal buttons.")
+    print("\nThere is a statistically significant difference between the animal buttons. Use the new panda button")
 else:
-    print("\nThe difference between the animal buttons is not statistically significant.")
+    print("\nThe difference between the animal buttons is not statistically significant. Continue to use the current animal button")
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Stacked bar plot for clicks and non-clicks
+contingency_table.plot(kind='bar', stacked=True, color=['#3498db', '#e74c3c'])
+plt.title('Clicks and Non-Clicks by Animal Button')
+plt.xlabel('Animal Button')
+plt.ylabel('Count')
+plt.legend(title='Clicked', loc='upper right')
+
+# Save the plot to a file in a different directory using amazing_functions
+af.back_one_enter_new('Python_Generated_Images', 'bar_plot_AB_Test.png')
+
+plt.show()
+
+
+# Heatmap for the contingency table
+# In order to run a hypothesis test to decide whether there is a significant difference in the click rate between these animal buttons, we would run a Chi-Square test.
+# To accomplish this, we would first create a contingency table for the AnimalButton and Clicked variables in the above table:
+plt.figure(figsize=(8, 6))
+sns.heatmap(contingency_table, annot=True, cmap="Blues", fmt='g', cbar=False)
+plt.title('Contingency Table for A/B Test')
+plt.xlabel('Clicked')
+plt.ylabel('Animal Button')
+
+# Save the plot to a file in a different directory using amazing_functions
+af.back_one_enter_new('Python_Generated_Images', 'contingency_table_AB_Test.png')
+
+plt.show()
